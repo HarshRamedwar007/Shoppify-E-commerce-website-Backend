@@ -4,7 +4,7 @@ Welcome to the backend of  Shoppify E commerce website - Backend, an e-commerce 
 
 ## Link
 
-[Github](https://github.com/HarshRamedwar007/Shoppify-E-Commerce-Backend)
+[Github](https://github.com/HarshRamedwar007/Shoppify-E-commerce-website-Backend)
 
  
   
