@@ -13,7 +13,7 @@ Welcome to the backend of  Shoppify E commerce website - Backend, an e-commerce 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/HarshRamedwar007/Shoppify-E-Commerce-Backend.git
+   git clone  https://github.com/HarshRamedwar007/Shoppify-E-commerce-website-Backend.git
    ```
 
 2. Install dependencies:
