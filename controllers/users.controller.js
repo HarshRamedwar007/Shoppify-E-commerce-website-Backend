@@ -3,13 +3,11 @@ import userModel from "../models/users.model.js";
 import bcrypt from "bcrypt";
 
 export async function registerUser(req, res, next) {
-    const { firstname, lastname, email, password } = req.body;
+    const {  email, password } = req.body;
 
     try {
         const newUser = await userModel.create({
-            firstname,
-            lastname,
-            email,
+             email,
             password
         });
 

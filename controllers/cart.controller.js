@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import Cart from "../models/cart.model.js";
 
+
 // Controller to get all items from the cart based on userId
 export async function getAllCartItems(req, res, next) {
     const { id } = req.params;
@@ -51,6 +52,7 @@ export async function getCartItemById(req, res, next) {
         next(error);
     }
 }
+
 
 // Controller to add an item to the cart
 export async function addItemToCart(req, res, next) {
@@ -127,20 +129,4 @@ export async function deleteCartItemById(req, res, next) {
         next(error);
     }
 }
-
-// Controller to delete all the cart items from the collection
-export async function deleteAllCartItems(req, res, next) {
-    const { id } = req.params;
-
-    try {
-        const result = await Cart.deleteMany({ userId: id });
-
-        if (!result) {
-            return res.status(400).json({ message: "An error occured while deleting all the cart items !" });
-        }
-
-        res.status(200).send({ status: "success", message: "All cart items deleted successfully.", data: result });
-    } catch (error) {
-        next(error);
-    }
-}
+ 

@@ -35,10 +35,12 @@ export async function getProductById(req, res, next) {
         next(error);
     }
 }
+ 
+
 
 // Add product to database
 export async function addProduct(req, res, next) {
-    const { name, price, description, stock, imageSrc } = req.body;
+    const { name, price, description, stock, imageSrc, rating } = req.body;
 
     try {
         const newProduct = await productsModel.create({
@@ -46,7 +48,8 @@ export async function addProduct(req, res, next) {
             price: price,
             description: description,
             stock: stock,
-            imageSrc: imageSrc
+            imageSrc: imageSrc,
+            rating : rating
         });
 
         if (!newProduct) {

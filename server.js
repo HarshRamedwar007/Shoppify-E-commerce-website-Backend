@@ -3,12 +3,11 @@ import mongoose from "mongoose";
 import errorRoutes from "./middlewares/errorRoutes.middleware.js";
 import productRouter from "./routes/products.route.js";
 import userRouter from "./routes/users.route.js";
-import dotenv from "dotenv"
+import dotenv from "dotenv";
 import cartRouter from "./routes/cart.route.js";
 import verifyJwtToken from "./middlewares/verifyJwtToken.middleware.js";
 
-// Loading environment variables from .env file
-dotenv.config();
+ dotenv.config();
 
 export const server = new express(); 
 // Middlewares
@@ -23,10 +22,9 @@ server.use("/cart", cartRouter)
 
 // Common middlesware for handling errors
 server.use(errorRoutes);
-
-// Connecting to MongoDB Instance
+ 
 mongoose
-    .connect("mongodb://localhost:27017/Mydatabase")
+    .connect("mongodb://localhost:27017/mydatabase")
     .then(() => console.log("Database Connection Successfull !"))
     .catch(error => console.log("Database Connection Failed !"));
 

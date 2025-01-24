@@ -1,31 +1,17 @@
 import mongoose from "mongoose";
-import bcrypt from "bcrypt";
-
+ import bcrypt from "bcrypt";
 const userSchema = mongoose.Schema({
-    firstname: {
-        type: String,
-        required: true,
-        trim: true
-    },
-    lastname: {
-        type: String,
-        required: true,
-        trim: true
-    },
+     
     email: {
         type: String,
-        required: true,
-        trim: true,
-        unique: true,
-        match: [/^\S+@\S+\.\S+$/, 'Please enter a valid email address']
+        required: true
+  
     },
     password: {
         type: String,
-        required: true,
-        minlength: 6
-    }
+        required: true
+       }
 });
-
 
 // Function which is executed before saving document -> the callback is the middleware
 userSchema.pre('save', async function (next) {
@@ -37,6 +23,5 @@ userSchema.pre('save', async function (next) {
     next();
 });
 
-const userModel = mongoose.model('users', userSchema);
-
+const   userModel = mongoose.model('users', userSchema);
 export default userModel;

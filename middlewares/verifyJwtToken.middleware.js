@@ -9,7 +9,7 @@ function verifyJwtToken(req, res, next) {
 
     const token = req.headers.authorization.split(" ")[2];
 
-    jwt.verify(token, process.env.JWT_SECRET_KEY, (err, decoded) => {
+    jwt.verify(token, 'Harsh@1', (err, decoded) => {
         if (err) {
             return res.status(400).json({ message: "Invalid JWT token." });
         }
